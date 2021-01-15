@@ -36,7 +36,7 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
         {
             Umowa.PoDochodowy = Umowa.WyBrutto - Umowa.WyBrutto * 0.2;
 
-            Umowa.PoDochodowy *= 0.17;
+            Umowa.PoDochodowy *= 0.18;
             Umowa.Wynagrodzenie -= Umowa.PoDochodowy;
         }
     }

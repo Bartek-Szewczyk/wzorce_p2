@@ -44,7 +44,7 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
             Umowa.PoDochodowy = Umowa.WyBrutto - 250 - Umowa.UbEmerytalne - Umowa.UbChorobowe - Umowa.UbRentowe;
             if (Umowa.WyBrutto  < 85528)
             {
-                Umowa.PoDochodowy *= 0.17;
+                Umowa.PoDochodowy *= 0.18;
             }
             else
             {
