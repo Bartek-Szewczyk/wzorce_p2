@@ -1,0 +1,29 @@
+﻿<Page x:Class="Wzorce_Proejkt2.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Wzorce_Proejkt2"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000"
+      Title="Page1">
+
+    <Grid Loaded="Grid_Loaded">
+        <Button x:Name="back" Content="Wróć " HorizontalAlignment="Left" Height="52" Margin="442,582,0,0" VerticalAlignment="Top" Width="157" Click="Button_Click"/>
+        <Label x:Name="m1" Content="1" HorizontalAlignment="Left" Height="64" Margin="54,104,0,0" VerticalAlignment="Top" Width="40" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m2" Content="2" HorizontalAlignment="Left" Height="57" Margin="55,168,0,0" VerticalAlignment="Top" Width="39" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m3" Content="3" HorizontalAlignment="Left" Height="64" Margin="55,230,0,0" VerticalAlignment="Top" Width="39" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m4" Content="4" HorizontalAlignment="Left" Height="60" Margin="55,306,0,0" VerticalAlignment="Top" Width="39" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m5" Content="5" HorizontalAlignment="Left" Height="63" Margin="55,387,0,0" VerticalAlignment="Top" Width="39" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m6" Content="6" HorizontalAlignment="Left" Height="67" Margin="55,482,0,0" VerticalAlignment="Top" Width="39" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m7" Content="7" HorizontalAlignment="Left" Height="57" Margin="502,111,0,0" VerticalAlignment="Top" Width="36" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m8" Content="8" HorizontalAlignment="Left" Height="55" Margin="502,176,0,0" VerticalAlignment="Top" Width="36" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m9" Content="9" HorizontalAlignment="Left" Height="52" Margin="502,236,0,0" VerticalAlignment="Top" Width="36" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m10" Content="10" HorizontalAlignment="Left" Height="52" Margin="491,306,0,0" VerticalAlignment="Top" Width="58" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m11" Content="11" HorizontalAlignment="Left" Height="55" Margin="491,391,0,0" VerticalAlignment="Top" Width="58" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="m12" Content="12" HorizontalAlignment="Left" Height="63" Margin="491,484,0,0" VerticalAlignment="Top" Width="59" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="title2" Content="Zarobki w poszczególnych miesiącach" HorizontalAlignment="Center" Height="63" VerticalAlignment="Top" Width="688" FontSize="36" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+        <Label x:Name="w1" Content="Label" HorizontalAlignment="Left" Height="60" Margin="113,111,0,0" VerticalAlignment="Top" Width="267"/>
+
+    </Grid>
+</Page>

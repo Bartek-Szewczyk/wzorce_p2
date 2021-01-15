@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Kalkulator_Wynarodzen_WPF;
+using Wzorce_Proejkt2;
 
 
 namespace Kalkulator_Wynagrodzeń_ConsoleApp
@@ -16,22 +17,26 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
         public double PoDochodowy { get; set; }
         public double Wynagrodzenie { get; set; }
         public double WyBrutto { get; set; }
+
+        public double BezDochodowego { get; set; }
         public Umowa(string umowaRodzaj)
         {
             _rodzaj = umowaRodzaj;
-            Wynagrodzenie = MainWindow.kwBrutto;
-            WyBrutto = MainWindow.kwBrutto;
+            Wynagrodzenie = Page2.kwBrutto;
+            WyBrutto = Page2.kwBrutto;
         }
         public void DisplayConfiguration()
         {
 
-            MainWindow.Podatki = $"Ubezpiecznie Emerytalne: {Math.Round(UbEmerytalne, 2)} zł \n" +
+            Page2.Podatki = $"Ubezpiecznie Emerytalne: {Math.Round(UbEmerytalne, 2)} zł \n" +
                                  $"Ubezpiecznie Rentowe: {Math.Round(UbRentowe, 2)} zł \n" +
                                  $"Ubezpiecznie Chorobowe: {Math.Round(UbChorobowe, 2)} zł \n" +
                                  $"Ubezpiecznie Zdrowotne: {Math.Round(UbZdrowotne, 2)} zł \n" +
                                  $"Podatek Dochodowy: {Math.Round(PoDochodowy, 2)} zł";
 
-            MainWindow.Netto = $"{Math.Round(Wynagrodzenie, 2)}";
+            Page2.Netto = $"{Math.Round(Wynagrodzenie, 2)}";
+
+            Page2.BezDochod = Math.Round(Wynagrodzenie + PoDochodowy, 2);
 
         }
     }

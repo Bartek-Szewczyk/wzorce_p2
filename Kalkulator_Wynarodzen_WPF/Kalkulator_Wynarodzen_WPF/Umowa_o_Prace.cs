@@ -29,6 +29,7 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
             Umowa.UbChorobowe = Umowa.WyBrutto * 0.0245;
 
             Umowa.Wynagrodzenie -= Umowa.UbChorobowe;
+
         }
 
         public override void BuildUbZdrowotne()

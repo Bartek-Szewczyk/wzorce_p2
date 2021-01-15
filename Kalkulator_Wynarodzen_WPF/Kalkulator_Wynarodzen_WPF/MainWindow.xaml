@@ -10,24 +10,8 @@
         <ImageBrush ImageSource="/tlo.png"/>
     </Window.Background>
     <Grid Margin="0,0,0,-6">
-        <TextBox x:Name="brutto" HorizontalAlignment="Left" Height="28" Margin="176,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="18" SelectionOpacity="0.4" FontWeight="Bold" Background="{x:Null}" />
-        <Button x:Name="oblicz" Content="Oblicz" HorizontalAlignment="Left" Height="44" Margin="401,553,0,0" VerticalAlignment="Top" Width="157" Click="oblicz_Click" Foreground="White" Background="#FF150083" FontSize="20" FontWeight="Bold"/>
-        <Label x:Name="title" Content="Kalkulator Wynagrodzeń" HorizontalAlignment="Center" Height="62" Margin="0,28,0,0" VerticalAlignment="Top" Width="1000" FontSize="36" Background="#FF150083" Foreground="White" HorizontalContentAlignment="Center"/>
-        <Label x:Name="BruttoLabel" Content="Kwota Brutto:" HorizontalAlignment="Left" Height="38" Margin="42,261,0,0" VerticalAlignment="Top" Width="129" FontSize="18" Foreground="#FF150083" FontWeight="Bold"/>
-        <Label x:Name="podatki" Content="Label" HorizontalAlignment="Left" Height="155" Margin="666,244,0,0" VerticalAlignment="Top" Width="276" FontSize="16" Visibility="Visible" Foreground="#FF150083"/>
-        <TextBox x:Name="netto" HorizontalAlignment="Left" Height="28" Margin="754,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" FontSize="20" SelectionOpacity="0.4" FontWeight="Bold" BorderBrush="{x:Null}" />
-        <Label x:Name="NettoLabel" Content="Kwota Netto:" HorizontalAlignment="Left" Height="38" Margin="612,152,0,0" VerticalAlignment="Top" Width="137" FontSize="20" FontWeight="Bold" Foreground="#FF150083"/>
-        <TextBox x:Name="pracodawca" HorizontalAlignment="Left" Height="30" Margin="816,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" FontSize="16" SelectionOpacity="0.4" FontWeight="Bold" BorderBrush="{x:Null}" />
-        <Label x:Name="PracodawcaLabel" Content="Koszty Pracodawcy:" HorizontalAlignment="Left" Height="38" Margin="654,420,0,0" VerticalAlignment="Top" Width="162" FontSize="16" Foreground="#FF150083" FontWeight="Bold"/>
-        <Label x:Name="OplatyPracodawcy" Content="Label" HorizontalAlignment="Left" Height="177" Margin="693,463,0,0" VerticalAlignment="Top" Width="249" Foreground="#FF150083" FontSize="14" />
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="31" Margin="80,175,0,0" VerticalAlignment="Top" Width="211" SelectionChanged="comboBox_SelectionChanged" Foreground="#FF150083" FontWeight="Bold" FontSize="16">
-            <ComboBoxItem Content="Umowa o pracę" IsSelected="True" Name="CbUmowaoPrace"/>
-            <ComboBoxItem Content="Umowa zlecenie" Name="CbUmowaZlecenie"/>
-            <ComboBoxItem Content="Umowa o dzieło" Name="CbUmowaoDzielo"/>
-        </ComboBox>
-        <CheckBox x:Name="ageCheckBox" Content="Masz mniej niż 26 lat?" HorizontalAlignment="Left" Height="25" Margin="90,349,0,0" VerticalAlignment="Top" Width="218" Foreground="#FF150083" FontWeight="Bold" FontSize="14"/>
-        <CheckBox x:Name="jobCheckBox" Content="Czy to twoja jedyna praca?" HorizontalAlignment="Left" Height="25" Margin="90,393,0,0" VerticalAlignment="Top" Width="218" Foreground="#FF150083" FontWeight="Bold" FontSize="14"/>
-        <Label x:Name="upLabel" Content="Ubezpiecznie/podatki:" HorizontalAlignment="Left" Height="38" Margin="653,206,0,0" VerticalAlignment="Top" Width="239" Foreground="#FF150083" FontWeight="Bold" FontSize="16"/>
+     
+        <Frame x:Name="frame" Content="Frame" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>

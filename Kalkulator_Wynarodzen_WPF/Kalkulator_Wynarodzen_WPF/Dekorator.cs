@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Kalkulator_Wynarodzen_WPF;
+using Wzorce_Proejkt2;
 
 namespace Kalkulator_Wynagrodzeń_ConsoleApp
 {
@@ -21,7 +22,7 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
 
         public double GetKoszty()
         {
-            return MainWindow.kwBrutto;
+            return Page2.kwBrutto;
         }
     }
 
@@ -54,7 +55,7 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
         public UEmerytalne(IUmowa umowa) : base(umowa)
         {
             _name = "Ubezpiecznie Emerytalne";
-            _kosztCalkowity = MainWindow.kwBrutto * 0.0976;
+            _kosztCalkowity = Page2.kwBrutto * 0.0976;
         }
     }
     public class URentowe : Decorator
@@ -62,7 +63,7 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
         public URentowe(IUmowa umowa) : base(umowa)
         {
             _name = "Ubezpiecznie Rentowe";
-            _kosztCalkowity = MainWindow.kwBrutto * 0.065;
+            _kosztCalkowity = Page2.kwBrutto * 0.065;
         }
     }
 
@@ -71,7 +72,7 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
         public UWypadkowe(IUmowa umowa) : base(umowa)
         {
             _name = "Ubezpiecznie Wypadkowe";
-            _kosztCalkowity = MainWindow.kwBrutto * 0.0167;
+            _kosztCalkowity = Page2.kwBrutto * 0.0167;
         }
     }
     public class FP : Decorator
@@ -79,7 +80,7 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
         public FP(IUmowa umowa) : base(umowa)
         {
             _name = "FP";
-            _kosztCalkowity = MainWindow.kwBrutto * 0.0245;
+            _kosztCalkowity = Page2.kwBrutto * 0.0245;
         }
     }
     public class FGSP : Decorator
@@ -87,7 +88,7 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
         public FGSP(IUmowa umowa) : base(umowa)
         {
             _name = "FGŚP";
-            _kosztCalkowity = MainWindow.kwBrutto * 0.001;
+            _kosztCalkowity = Page2.kwBrutto * 0.001;
         }
     }
 }
