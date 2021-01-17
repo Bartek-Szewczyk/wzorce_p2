@@ -10,13 +10,13 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
     public class Umowa
     {
         private string _rodzaj;
-        public double UbEmerytalne { get; set; }
-        public double UbRentowe { get; set; }
-        public double UbChorobowe { get; set; }
-        public double UbZdrowotne { get; set; }
+        public static double UbEmerytalne { get; set; }
+        public static double UbRentowe { get; set; }
+        public static double UbChorobowe { get; set; }
+        public static double UbZdrowotne { get; set; }
         public double PoDochodowy { get; set; }
         public double Wynagrodzenie { get; set; }
-        public double WyBrutto { get; set; }
+        public static double WyBrutto { get; set; }
 
         public double BezDochodowego { get; set; }
         public Umowa(string umowaRodzaj)
@@ -37,6 +37,7 @@ namespace Kalkulator_Wynagrodzeń_ConsoleApp
             Page2.Netto = $"{Math.Round(Wynagrodzenie, 2)}";
 
             Page2.BezDochod = Math.Round(Wynagrodzenie + PoDochodowy, 2);
+            Page2.Ubez = Math.Round(UbChorobowe + UbEmerytalne + UbRentowe,2);
 
         }
     }

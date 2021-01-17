@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Kalkulator_Wynarodzen_WPF;
+using Wzorce_Proejkt2;
 
 namespace Wzorce_Proejkt2
 {
@@ -21,10 +22,14 @@ namespace Wzorce_Proejkt2
     {
         public double kwota;
         public double suma;
-        public Page1(double wynagrodzenie)
+        public double ubez;
+        public string umowa;
+        public Page1(double wynagrodzenie, double ubez, string umowa)
         {
             InitializeComponent();
             kwota = wynagrodzenie;
+            this.ubez = ubez;
+            this.umowa = umowa;
         }
 
 
@@ -35,28 +40,57 @@ namespace Wzorce_Proejkt2
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            suma = kwota;
             PoDochodowy pDochodowy = new PoDochodowy();
 
             Label[] labels = new Label[] { w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12 };
-            for (int i = 0; i < labels.Length; i++)
+            if (umowa == "uop")
             {
-                if (suma < 85528)
+                for (int i = 0; i < labels.Length; i++)
+                {
+
+                    if (suma < 85528)
+                    {
+                        pDochodowy.ustawStan(new p17());
+                    }
+                    else
+                    {
+                        pDochodowy.ustawStan(new p32());
+                        labels[i].Foreground = Brushes.IndianRed;
+                    }
+
+                    double wyp = Math.Round(pDochodowy.wysokosc(kwota, ubez), 2);
+                    labels[i].Content = wyp;
+                    suma += wyp;
+
+                }
+            }
+            else if (umowa == "uz")
+            {
+                for (int i = 0; i < labels.Length; i++)
+                {
+
+                    pDochodowy.ustawStan(new zp17());
+
+                    double wyp = Math.Round(pDochodowy.wysokosc(kwota, ubez), 2);
+                    labels[i].Content = wyp;
+                    suma += wyp;
+
+                }
+            }
+            else
+            {
+                for (int i = 0; i < labels.Length; i++)
                 {
                     pDochodowy.ustawStan(new p18());
-                }
-                else
-                {
-                    pDochodowy.ustawStan(new p32());
-                    labels[i].Foreground = Brushes.IndianRed;
-                }
 
-                labels[i].Content = Math.Round(pDochodowy.wysokosc(kwota), 2);
-                suma += kwota;
-
+                    double wyp = Math.Round(pDochodowy.wysokosc(kwota, ubez), 2);
+                    labels[i].Content = wyp;
+                    suma += wyp;
+                }
             }
 
-            zRoczne.Content = suma;
+
+            zRoczne.Content = Math.Round(suma,2);
             progpod.Content = pDochodowy.prog();
         }
 

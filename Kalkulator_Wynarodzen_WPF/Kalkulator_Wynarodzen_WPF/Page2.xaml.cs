@@ -40,7 +40,8 @@ namespace Wzorce_Proejkt2
         public static string Netto { get; set; }
 
         public static double BezDochod { get; set; }
-
+        public static double Ubez { get; set; }
+        private string umowa = "uop";
         private void oblicz_Click(object sender, RoutedEventArgs e)
         {
             kwBrutto = Double.Parse(brutto.Text);
@@ -58,9 +59,11 @@ namespace Wzorce_Proejkt2
                     var prac = new UEmerytalne(new URentowe(new UWypadkowe(new FP(new FGSP(new Pracodawca())))));
                     pracodawca.Text = Math.Round(prac.GetKoszty(), 2).ToString();
                     OplatyPracodawcy.Content = "Zawierają: \n" + prac.GetNazwa();
+                    month.Visibility = Visibility.Hidden;
                 }
                 else
                 {
+                    month.Visibility = Visibility.Visible;
                     var wyplata = new Wyplata();
                     UmowaBuilder umowaBuilder = new Umowa_o_Prace();
                     wyplata.ConstructUmowa(umowaBuilder);
@@ -82,9 +85,11 @@ namespace Wzorce_Proejkt2
                     var prac = new Pracodawca();
                     pracodawca.Text = Math.Round(prac.GetKoszty(), 2).ToString();
                     OplatyPracodawcy.Content = "Zawierają: \n" + prac.GetNazwa();
+                    month.Visibility = Visibility.Hidden;
                 }
                 else
                 {
+                    month.Visibility = Visibility.Visible;
                     if (jobCheckBox.IsChecked == true)
                     {
                         var wyplata = new Wyplata();
@@ -111,6 +116,7 @@ namespace Wzorce_Proejkt2
             }
             else if (CbUmowaoDzielo.IsSelected)
             {
+                month.Visibility = Visibility.Visible;
                 var wyplata = new Wyplata();
                 UmowaBuilder umowaBuilder = new Umowa_o_Dzielo();
                 wyplata.ConstructUmowa(umowaBuilder);
@@ -130,16 +136,19 @@ namespace Wzorce_Proejkt2
         {
             if (CbUmowaoPrace.IsSelected)
             {
+                umowa = "uop";
                 if (ageCheckBox != null) ageCheckBox.Visibility = Visibility.Visible;
                 if (jobCheckBox != null) jobCheckBox.Visibility = Visibility.Hidden;
             }
             else if (CbUmowaZlecenie.IsSelected)
             {
+                umowa = "uz";
                 ageCheckBox.Visibility = Visibility.Visible;
                 jobCheckBox.Visibility = Visibility.Visible;
             }
             else
             {
+                umowa = "uod";
                 ageCheckBox.Visibility = Visibility.Hidden;
                 jobCheckBox.Visibility = Visibility.Hidden;
             }
@@ -157,12 +166,13 @@ namespace Wzorce_Proejkt2
             pracodawca.Visibility = Visibility.Visible;
             OplatyPracodawcy.Visibility = Visibility.Visible;
             upLabel.Visibility = Visibility.Visible;
+            
         }
 
         private void month_Click(object sender, RoutedEventArgs e)
         {
             double wynagrodzenie = BezDochod;
-            this.NavigationService.Content=new Page1(wynagrodzenie);
+            this.NavigationService.Content=new Page1(wynagrodzenie, Ubez,umowa);
         }
     }
 }
